@@ -1,25 +1,67 @@
-import logo from './logo.svg';
+
 import './App.css';
+import CarComponents from "./components/carComponents/carComponents";
+
+const carList = [
+    {
+    title: 'Opel Insignia',
+    image : 'https://irecommend.ru/sites/default/files/product-images/635537/FGrUe10QOkbvYiCM7pE4w.jpeg',
+    alt: 'Opel car',
+    price : '11200$',
+    description : 'Приветствую. До Инсигнии была Астра трехдверка. Был доволен. Около полугода выбирал следующий автомобиль, брал кучу тест драйвов. Но увидев Инсигнию, понял что это ОнО. Безусловно красивая и в 2011 совсем не банальная машина. Заказывал под себя на заводе. Т е собрали как конструктор именно под меня, из-за этого прождал после заказа машину 8месяцев) но зато все что хотел там оказалось. Полный привод, хэчбек, коричневая кожа,\'221 л/с. Езжу до сих пор, пробег 130 тыс.'
+    },
+    {
+        title: 'Mercedes-Benz S-Class',
+        image : 'https://lh3.googleusercontent.com/proxy/Ht5ROUH7RD-6O18DRexuScCnXP76eDw15jf_XcuLMR-O-OW7hFxDTfnBtzG-yF11m5FP519pdfO1W_isF4sJHdus9pw',
+        alt: 'Mercedes-Benz S-Class',
+        price : '21100$',
+        description : 'Напомним, полноценная премьера седана состоится уже 2 сентября. К настоящему времени известно, что построенный на новой платформе S-класс сохранит три варианта колесной базы, получит полный привод в сочетании с V12 и несколько гибридных силовых установок на основе шести- и восьмицилиндровых двигателей.'
+    },
+    {
+        title: 'Audi Q8',
+        image : 'https://kolesa-uploads.ru/-/2e38c004-97e4-4ddc-87d4-8749d22f19c3/123-8.jpg',
+        alt: 'Audi Q8',
+        price : '38000$',
+        description : 'В дилерській мережі Audi діють нові програми з фінансуванням. Поспішайте замовити новий Audi на сенсаційних умовах від 0,01% річних на 2 роки. \n' +
+            '\n' +
+            'Експресивний дизайн, передові технології, мистецтво задовольняти найвищі вимоги та неприборканий драйв від керування -  все це поєднано в нових Audi. Твій світ без обмежень з автомобілем Audi та новими умовами фінансуванням від Porsche Finance Group Ukraine. '},
+    {
+        title: 'Opel Insignia',
+        image : 'https://irecommend.ru/sites/default/files/product-images/635537/FGrUe10QOkbvYiCM7pE4w.jpeg',
+        alt: 'Opel car',
+        price : '11200$',
+        description : 'Приветствую. До Инсигнии была Астра трехдверка. Был доволен. Около полугода выбирал следующий автомобиль, брал кучу тест драйвов. Но увидев Инсигнию, понял что это ОнО. Безусловно красивая и в 2011 совсем не банальная машина. Заказывал под себя на заводе. Т е собрали как конструктор именно под меня, из-за этого прождал после заказа машину 8месяцев) но зато все что хотел там оказалось. Полный привод, хэчбек, коричневая кожа,\'221 л/с. Езжу до сих пор, пробег 130 тыс.'
+    },
+    {
+        title: 'Mercedes-Benz S-Class',
+        image : 'https://lh3.googleusercontent.com/proxy/Ht5ROUH7RD-6O18DRexuScCnXP76eDw15jf_XcuLMR-O-OW7hFxDTfnBtzG-yF11m5FP519pdfO1W_isF4sJHdus9pw',
+        alt: 'Mercedes-Benz S-Class',
+        price : '21100$',
+        description : 'Напомним, полноценная премьера седана состоится уже 2 сентября. К настоящему времени известно, что построенный на новой платформе S-класс сохранит три варианта колесной базы, получит полный привод в сочетании с V12 и несколько гибридных силовых установок на основе шести- и восьмицилиндровых двигателей.'
+    },
+    {
+        title: 'Audi Q8',
+        image : 'https://kolesa-uploads.ru/-/2e38c004-97e4-4ddc-87d4-8749d22f19c3/123-8.jpg',
+        alt: 'Audi Q8',
+        price : '38000$',
+        description : 'В дилерській мережі Audi діють нові програми з фінансуванням. Поспішайте замовити новий Audi на сенсаційних умовах від 0,01% річних на 2 роки. \n' +
+            '\n' +
+            'Експресивний дизайн, передові технології, мистецтво задовольняти найвищі вимоги та неприборканий драйв від керування -  все це поєднано в нових Audi. Твій світ без обмежень з автомобілем Audi та новими умовами фінансуванням від Porsche Finance Group Ukraine. '},
+
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={'ollCars'}>
+            {carList.map((value, index) =>  {
+            return <CarComponents key = {index}  {...value}/>
+        })}
     </div>
   );
 }
+export default App
 
-export default App;
+
+
+
+
